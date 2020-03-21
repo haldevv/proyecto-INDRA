@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$indra-project-primary: mat-palette($mat-indigo);
-$indra-project-accent: mat-palette($mat-pink, A200, A100, A400);
+$indra-project-primary: mat-palette($mat-blue-gray);
+$indra-project-accent: mat-palette($mat-gray, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $indra-project-warn: mat-palette($mat-red);
@@ -30,3 +30,11 @@ $indra-project-theme: mat-light-theme($indra-project-primary, $indra-project-acc
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  padding: 10%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
