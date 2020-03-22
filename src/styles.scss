@@ -32,9 +32,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.mat-header-cell .cdk-column-actions .mat-column-actions {
+  width: 40%;
 }

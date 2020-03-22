@@ -19,6 +19,7 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PostsByUserComponent } from './screens/posts/posts-by-user/posts-by-user.component';
 
 const matModules = [
   MatToolbarModule,
@@ -36,6 +37,7 @@ const matModules = [
     AppComponent,
     UserListComponent,
     UserFormComponent,
+    PostsByUserComponent,
   ],
   imports: [
     BrowserModule,

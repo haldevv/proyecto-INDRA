@@ -35,7 +35,7 @@ export class UserFormComponent implements OnInit {
       mergeMap(params => {
         const id = params.get('id');
         this.idToUpdate = id;
-        return id ? this.userService.loadUserById(id) : of([]);
+        return id ? this.userService.loadUserById(id) : of(null);
       })
     ).subscribe((userToUpdate: UserModel) => {
       if (userToUpdate) {
