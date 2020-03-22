@@ -1,1 +1,33 @@
-<p>user-form works!</p>
+<div class="container">
+  <h1>{{isUpdatingUser ? 'Actualizar' : 'Crear'}} Usuario</h1>
+  <form [formGroup]="form" class="input-container">
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-12">
+        <mat-label>Nombre</mat-label>
+        <input matInput autocomplete="off" formControlName="name">
+        <mat-error *ngIf="form.get('name').hasError('required') && form.get('name').touched">Este campo es requerido</mat-error>
+        <mat-icon matSuffix color="primary">person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-12">
+        <mat-label>Email</mat-label>
+        <input matInput autocomplete="off" formControlName="email">
+        <mat-error *ngIf="form.get('email').hasError('email') && form.get('email').touched">Este campo debe ser un email</mat-error>
+        <mat-icon matSuffix color="primary">alternate_email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-12">
+        <mat-label>Dirección</mat-label>
+        <input matInput autocomplete="off" formControlName="address">
+        <mat-icon matSuffix color="primary">house</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-12">
+        <mat-label>Edad</mat-label>
+        <input matInput autocomplete="off" formControlName="age">
+        <mat-icon matSuffix color="primary">person</mat-icon>
+      </mat-form-field>
+      <div class="col-md-offset-4 col-md-4 col-xs-12">
+        <button mat-flat-button color="primary" [disabled]="!form.valid" style="width: 100%; height: 50px" (click)="createOrUpdateUser()">{{isUpdatingUser ? 'Actualizar' : 'Crear'}}</button>
+      </div>
+    </div>
+
+  </form>
+</div>

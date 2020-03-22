@@ -3,6 +3,7 @@ import {UserModel} from '../../../models/user.model';
 import {Observable, of, Subject} from 'rxjs';
 import {UserService} from '../../../services/user.service';
 import {takeUntil} from 'rxjs/operators';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-user-list',
@@ -15,7 +16,7 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   onDestroySubject = new Subject();
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private matSnackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -27,6 +28,16 @@ export class UserListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.onDestroySubject.next();
     this.onDestroySubject.complete();
+  }
+
+  deleteUser(userId: string) {
+    this.userService.deleteUser(userId).subscribe(() => {
+      this.matSnackBar.open('Usuario eliminado exitosamente', null, {
+        duration: 2000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top'
+      });
+    });
   }
 
 }
